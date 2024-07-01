@@ -31,8 +31,8 @@ import math
 class ImageAnalysis:
     output_dir = "outputs"   
     temp_path = 'outputs/original_image.png'
-    face_landmarker_checkpoint = '/root/autodl-tmp/color-detection-fastapi/colorDetectionFastApi/checkpoints/face_landmarker_v2_with_blendshapes.task'
-    hair_segmenter_checkpoint = '/root/autodl-tmp/color-detection-fastapi/colorDetectionFastApi/checkpoints/hair_segmenter.tflite' 
+    face_landmarker_checkpoint = 'colorDetectionFastApi/checkpoints/face_landmarker_v2_with_blendshapes.task'
+    hair_segmenter_checkpoint = 'colorDetectionFastApi/checkpoints/hair_segmenter.tflite' 
     box_threshold = 0.3   
     text_threshold = 0.25   
     device = "cuda"
