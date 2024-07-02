@@ -30,7 +30,7 @@ import math
 
 class ImageAnalysis:
     output_dir = "outputs"   
-    temp_path = 'outputs/original_image.png'
+    temp_path = f'{output_dir}/original_image.png'
     face_landmarker_checkpoint = 'colorDetectionFastApi/checkpoints/face_landmarker_v2_with_blendshapes.task'
     hair_segmenter_checkpoint = 'colorDetectionFastApi/checkpoints/hair_segmenter.tflite' 
     box_threshold = 0.3   
@@ -467,12 +467,12 @@ def rgb_to_saturation(rgb_color):
 
 
 def analyze_image(image_url, detector, segmenter):
+    os.makedirs(ImageAnalysis.output_dir, exist_ok=True)
     img = download_image(image_url)
     image_pil = orientation_correction(img)
     image_pil.save(ImageAnalysis.temp_path)
     image = mp.Image.create_from_file(ImageAnalysis.temp_path)
     
-    os.makedirs(ImageAnalysis.output_dir, exist_ok=True)
 
     # image = mp.Image.create_from_file("/root/autodl-tmp/Grounded-Segment-Anything/faces/face.png")
     detection_result = detector.detect(image)
