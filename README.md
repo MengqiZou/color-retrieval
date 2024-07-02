@@ -35,6 +35,12 @@ pip install -r requirements.txt
 ```
 ## 6. 模型checkpoints
 
+### 创建checkpoints文件夹
+
+```bash 
+mkdir colorDetectionFastApi/checkpoints
+```
+
 ### 安装五官detector checkpoint -- face_landmarker_v2_with_blendshapes.task:
 
 ```bash  
